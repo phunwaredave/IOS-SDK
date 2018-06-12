@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iOS</title>
+    <script src="vpaid.bundle/VpaidIos.js"></script>
+    <style>
+        video::-webkit-media-controls {
+            display:none !important;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var config = {
+            vpaid: "{VPAID_URL}",
+            adParameters: "{AD_PARAMS}",
+            sound:0
+        };
+        runVpaidIos(config);
+    </script>
+</body>
+</html>
