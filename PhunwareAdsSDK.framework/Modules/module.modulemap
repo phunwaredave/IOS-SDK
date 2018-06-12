@@ -1,0 +1,6 @@
+framework module PhunwareAdsSDK {
+  umbrella header "PhunwareAdsSDK.h"
+
+  export *
+  module * { export * }
+}
