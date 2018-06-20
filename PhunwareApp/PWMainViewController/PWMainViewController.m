@@ -10,6 +10,7 @@
 #import "PWMainViewController.h"
 #import "PWDetailsViewController.h"
 #import "TableViewCell.h"
+#import <PWMonetizationSDK/BannerAdView.h>
 
 @interface PWMainViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -23,14 +24,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     self.arrayWithParams = [NSArray arrayWithObjects:
-                            @{@"adName" : @"Standart banner (320x50)", @"info" : @{@"adType" : @"banner", @"adSize" : NSStringFromCGSize(CGSizeMake(320.0, 50.0))}},
-                            @{@"adName" : @"Large banner (320x100)", @"info" : @{@"adType" : @"banner", @"adSize" : NSStringFromCGSize(CGSizeMake(320.0, 100.0))}},
-                            @{@"adName" : @"IAB Medium Rectangel bannner (300x250)", @"info" : @{@"adType" : @"banner", @"adSize" : NSStringFromCGSize(CGSizeMake(300.0, 250.0))}},
-                            @{@"adName" : @"IAB Full size banner Tablets (468x60)", @"info" : @{@"adType" : @"banner", @"adSize" : NSStringFromCGSize(CGSizeMake(468.0, 60.0))}},
-                            @{@"adName" : @"IAB Leaderboard (768x90)", @"info" : @{@"adType" : @"banner", @"adSize" : NSStringFromCGSize(CGSizeMake(768.0, 90.0))}},
-                            @{@"adName" : @"Interstitial banner (full-screen)", @"info" : @{@"adType" : @"interstitial", @"adSize" : [NSNull null]}},
-                            @{@"adName" : @"Video AD", @"info" : @{@"adType" : @"video", @"adSize" : [NSNull null]}},
-                            @{@"adName" : @"Rewarded Video AD", @"info" : @{@"adType" : @"rewarded video", @"adSize" : [NSNull null]}},
+                            @{@"adName" : @"Standart banner (320x50)", @"info" : @{@"adType" : @"banner", @"adContainerSize" : NSStringFromCGSize(CGSizeMake(320.0, 50.0)), @"adBannerSize" : @(kStandartSizeBanner)}},
+                            @{@"adName" : @"Large banner (320x100)", @"info" : @{@"adType" : @"banner", @"adContainerSize" : NSStringFromCGSize(CGSizeMake(320.0, 100.0)), @"adBannerSize" : @(kLargeSizeBanner)}},
+                            @{@"adName" : @"IAB Medium Rectangel bannner (300x250)", @"info" : @{@"adType" : @"banner", @"adContainerSize" : NSStringFromCGSize(CGSizeMake(300.0, 250.0)), @"adBannerSize" : @(kIABMediumRectangelSizeBanner)}},
+                            @{@"adName" : @"IAB Full size banner Tablets (468x60)", @"info" : @{@"adType" : @"banner", @"adContainerSize" : NSStringFromCGSize(CGSizeMake(468.0, 60.0)), @"adBannerSize" : @(kIABFullSizeBanner)}},
+                            @{@"adName" : @"IAB Leaderboard (768x90)", @"info" : @{@"adType" : @"banner", @"adContainerSize" : NSStringFromCGSize(CGSizeMake(768.0, 90.0)), @"adBannerSize" : @(kIABLeaderboardSizeBanner)}},
+                            @{@"adName" : @"Interstitial banner (full-screen)", @"info" : @{@"adType" : @"interstitial", @"adContainerSize" : [NSNull null]}},
+                            @{@"adName" : @"Video AD", @"info" : @{@"adType" : @"video", @"adContainerSize" : [NSNull null]}},
+                            @{@"adName" : @"Rewarded Video AD", @"info" : @{@"adType" : @"rewarded video", @"adContainerSize" : [NSNull null]}},
                             nil];
 }
 

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4833631C20C915D200A7AC9D /* PhunwareAdsSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 48906EEE20C810D0003A1F12 /* PhunwareAdsSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4833632020C91BA600A7AC9D /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4833631F20C91BA600A7AC9D /* TableViewCell.m */; };
 		48906EDA20C7CA4C003A1F12 /* PWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48906ED920C7CA4C003A1F12 /* PWAppDelegate.m */; };
 		48906EDD20C7CA4C003A1F12 /* PWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48906EDC20C7CA4C003A1F12 /* PWMainViewController.m */; };
@@ -16,6 +15,7 @@
 		48906EE520C7CA4F003A1F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48906EE320C7CA4F003A1F12 /* LaunchScreen.storyboard */; };
 		48906EE820C7CA4F003A1F12 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48906EE720C7CA4F003A1F12 /* main.m */; };
 		48906EF220C811B3003A1F12 /* PWDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48906EF120C811B3003A1F12 /* PWDetailsViewController.m */; };
+		4890A10020D94D320056958C /* PWMonetizationSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4890A0FD20D94D290056958C /* PWMonetizationSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		48F8F0A920D01B4D009D4351 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F8F0A720D01B4D009D4351 /* Fabric.framework */; };
 		48F8F0AA20D01B4D009D4351 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48F8F0A820D01B4D009D4351 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4833631C20C915D200A7AC9D /* PhunwareAdsSDK.framework in Embed Frameworks */,
+				4890A10020D94D320056958C /* PWMonetizationSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,9 +47,9 @@
 		48906EE420C7CA4F003A1F12 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48906EE620C7CA4F003A1F12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48906EE720C7CA4F003A1F12 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		48906EEE20C810D0003A1F12 /* PhunwareAdsSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PhunwareAdsSDK.framework; sourceTree = "<group>"; };
 		48906EF020C811B3003A1F12 /* PWDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PWDetailsViewController.h; sourceTree = "<group>"; };
 		48906EF120C811B3003A1F12 /* PWDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PWDetailsViewController.m; sourceTree = "<group>"; };
+		4890A0FD20D94D290056958C /* PWMonetizationSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PWMonetizationSDK.framework; sourceTree = "<group>"; };
 		48F8F0A720D01B4D009D4351 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		48F8F0A820D01B4D009D4351 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +81,7 @@
 			children = (
 				48F8F0A820D01B4D009D4351 /* Crashlytics.framework */,
 				48F8F0A720D01B4D009D4351 /* Fabric.framework */,
-				48906EEE20C810D0003A1F12 /* PhunwareAdsSDK.framework */,
+				4890A0FD20D94D290056958C /* PWMonetizationSDK.framework */,
 				48906ED720C7CA4C003A1F12 /* PhunwareApp */,
 				48906ED620C7CA4C003A1F12 /* Products */,
 			);
@@ -386,7 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.PW.PhunwareApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "06f8d7a9-90c0-43fd-a42f-6dfca3bbd665";
+				PROVISIONING_PROFILE = "24d24685-5921-4edf-ab58-3392b5bf7f65";
 				PROVISIONING_PROFILE_SPECIFIER = "wildcard provision profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -412,7 +412,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.PW.PhunwareApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "06f8d7a9-90c0-43fd-a42f-6dfca3bbd665";
+				PROVISIONING_PROFILE = "24d24685-5921-4edf-ab58-3392b5bf7f65";
 				PROVISIONING_PROFILE_SPECIFIER = "wildcard provision profile";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -1,7 +1,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PhunwareAds : NSObject
+@interface MonetizationSDK : NSObject
 
 + (void)start;
 

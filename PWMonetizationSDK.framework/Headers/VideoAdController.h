@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol PhunwareVideoAdDelegate<NSObject>
+@protocol VideoAdDelegate<NSObject>
 
 @required
 
@@ -20,9 +20,9 @@
 
 @end
 
-@interface PhunwareVideoAdController : NSObject
+@interface VideoAdController : NSObject
 
-@property (weak, nonatomic) id<PhunwareVideoAdDelegate> videoAdDelegate;
+@property (weak, nonatomic) id<VideoAdDelegate> videoAdDelegate;
 
 // Set this property if your video event have REWARD/AMOUNT macros
 @property (strong, nonatomic) NSString *rewardMacros;

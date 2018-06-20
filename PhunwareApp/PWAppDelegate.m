@@ -7,7 +7,7 @@
 //
 
 #import "PWAppDelegate.h"
-#import <PhunwareAdsSDK/PhunwareAdsSDK.h>
+#import <PWMonetizationSDK/PWMonetizationSDK.h>
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 
@@ -22,8 +22,8 @@
 {
     [Fabric with:@[[Crashlytics class]]];
 
-    [PhunwareAds start];
-    [PhunwareAds GDPRconsentFlag:YES];
+    [MonetizationSDK start];
+    [MonetizationSDK GDPRconsentFlag:YES];
     
     return YES;
 }

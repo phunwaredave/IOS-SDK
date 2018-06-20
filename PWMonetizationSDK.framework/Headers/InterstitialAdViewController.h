@@ -2,7 +2,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@protocol PhunwareInterstitialAdDelegate<NSObject>
+@protocol InterstitialAdDelegate<NSObject>
 
 @required
 
@@ -20,9 +20,9 @@
 
 @end;
 
-@interface PhunwareInterstitialAdViewController : NSObject
+@interface InterstitialAdViewController : NSObject
 
-@property (weak, nonatomic) id<PhunwareInterstitialAdDelegate> delegate;
+@property (weak, nonatomic) id<InterstitialAdDelegate> delegate;
 
 - (instancetype)initWithPlacementId:(NSString *)placementId;
 - (instancetype)init DEPRECATED_ATTRIBUTE;

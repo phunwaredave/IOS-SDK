@@ -7,9 +7,9 @@
 //
 
 #import "PWDetailsViewController.h"
-#import <PhunwareAdsSDK/PhunwareAdsSDK.h>
+#import <PWMonetizationSDK/PWMonetizationSDK.h>
 
-@interface PWDetailsViewController ()<PhunwareBannerAdViewDelegate, PhunwareVideoAdDelegate, PhunwareInterstitialAdDelegate>
+@interface PWDetailsViewController ()<BannerAdViewDelegate, VideoAdDelegate, InterstitialAdDelegate>
 
 @property (weak, nonatomic) IBOutlet UIView *bannerView;
 @property (weak, nonatomic) IBOutlet UITextField *placementIdTextField;
@@ -19,9 +19,11 @@
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *widthContraint;
 @property (strong, nonatomic) IBOutletCollection(NSLayoutConstraint) NSArray *heightContraint;
 
-@property (strong, nonatomic) PhunwareBannerAdView *bannerAd;
-@property (strong, nonatomic) PhunwareVideoAdController *videoAd;
-@property (strong, nonatomic) PhunwareInterstitialAdViewController *interstitialAd;
+@property (strong, nonatomic) BannerAdView *bannerAd;
+@property (assign, nonatomic) BannerSize size;
+
+@property (strong, nonatomic) VideoAdController *videoAd;
+@property (strong, nonatomic) InterstitialAdViewController *interstitialAd;
 
 @end
 
@@ -53,21 +55,21 @@
 {
     if ([[self.adParamsDictionary objectForKey:@"adType"] isEqualToString:@"banner"]) {
         [self.bannerAd removeFromSuperview];
-        self.bannerAd = [[PhunwareBannerAdView alloc] initWithPlacementId:self.placementIdTextField.text size:CGSizeFromString([self.adParamsDictionary objectForKey:@"adSize"])];
+        self.bannerAd = [[BannerAdView alloc] initWithPlacementId:self.placementIdTextField.text size:(BannerSize)[[self.adParamsDictionary objectForKey:@"adBannerSize"] integerValue]];
         [self.bannerView addSubview:self.bannerAd];
         self.bannerAd.delegate = self;
         [self.bannerAd loadBannerAd];
         [self.bannerAd startAutomaticallyRefreshingContents];
     } else if ([[self.adParamsDictionary objectForKey:@"adType"] isEqualToString:@"interstitial"]) {
-        self.interstitialAd = [[PhunwareInterstitialAdViewController alloc] initWithPlacementId:self.placementIdTextField.text];
+        self.interstitialAd = [[InterstitialAdViewController alloc] initWithPlacementId:self.placementIdTextField.text];
         self.interstitialAd.delegate = self;
         [self.interstitialAd loadInterstitialAd];
     } else if ([[self.adParamsDictionary objectForKey:@"adType"] isEqualToString:@"video"]) {
-        self.videoAd = [[PhunwareVideoAdController alloc] initWithPlacementId:self.placementIdTextField.text];
+        self.videoAd = [[VideoAdController alloc] initWithPlacementId:self.placementIdTextField.text];
         self.videoAd.videoAdDelegate = self;
         [self.videoAd loadVideoAd];
     } else if ([[self.adParamsDictionary objectForKey:@"adType"] isEqualToString:@"rewarded video"]) {
-        self.videoAd = [[PhunwareVideoAdController alloc] initWithPlacementId:self.placementIdTextField.text];
+        self.videoAd = [[VideoAdController alloc] initWithPlacementId:self.placementIdTextField.text];
         self.videoAd.videoAdDelegate = self;
         self.videoAd.amountMacros = self.amountMacrosTextField.text;
         self.videoAd.rewardMacros = self.rewardMacrosTextField.text;
@@ -105,10 +107,10 @@
 {
     if ([[self.adParamsDictionary objectForKey:@"adType"] isEqualToString:@"banner"]) {
         for (NSLayoutConstraint *height in self.heightContraint) {
-            height.constant = CGSizeFromString([self.adParamsDictionary objectForKey:@"adSize"]).height;
+            height.constant = CGSizeFromString([self.adParamsDictionary objectForKey:@"adContainerSize"]).height;
         }
         for (NSLayoutConstraint *width in self.widthContraint) {
-            width.constant = CGSizeFromString([self.adParamsDictionary objectForKey:@"adSize"]).width;
+            width.constant = CGSizeFromString([self.adParamsDictionary objectForKey:@"adContainerSize"]).width;
             
         }
         [self.view setNeedsLayout];
@@ -120,6 +122,7 @@
 - (void)bannerAdDidLoad
 {
     [self showAlertWithMessage:@"Banner Ad View successful loaded."];
+//    [self.bannerAd showBannerAdView];
 }
 
 - (void)bannerAdDidFailLoadingWithError:(NSError *)error
