@@ -122,7 +122,6 @@
 - (void)bannerAdDidLoad
 {
     [self showAlertWithMessage:@"Banner Ad View successful loaded."];
-//    [self.bannerAd showBannerAdView];
 }
 
 - (void)bannerAdDidFailLoadingWithError:(NSError *)error
@@ -170,7 +169,6 @@
 - (void)videoAdViewDidDisappear
 {
     NSLog(@"Video Ad View did disappear");
-
 }
 
 #pragma mark - PhunwareInterstitialAdDelegate Methods

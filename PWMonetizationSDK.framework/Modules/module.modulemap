@@ -1,6 +1,0 @@
-framework module PWMonetizationSDK {
-  umbrella header "PWMonetizationSDK.h"
-
-  export *
-  module * { export * }
-}
