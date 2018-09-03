@@ -71,8 +71,8 @@
     } else if ([[self.adParamsDictionary objectForKey:@"adType"] isEqualToString:@"rewarded video"]) {
         self.videoAd = [[VideoAdController alloc] initWithPlacementId:self.placementIdTextField.text];
         self.videoAd.videoAdDelegate = self;
-        self.videoAd.amountMacros = self.amountMacrosTextField.text;
-        self.videoAd.rewardMacros = self.rewardMacrosTextField.text;
+        [self.videoAd setAmountMacros:self.amountMacrosTextField.text];
+        [self.videoAd setRewardedMacros:self.rewardMacrosTextField.text];
         [self.videoAd loadVideoAd];
     }
     
@@ -143,6 +143,12 @@
 {
     NSLog(@"Banner Ad View did appear");
 }
+
+- (UIViewController *)viewControllerForPresentingModalView
+{
+    return self;
+}
+
 
 #pragma mark - PhunwareVideoAdDelegate Methods
 
